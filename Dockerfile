@@ -14,7 +14,7 @@ RUN apt purge --autoremove -y
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt-get install -y nodejs
 RUN python3 -m pip install --no-cache-dir --upgrade pip
-RUN python3 -m pip install --no-cache-dir --upgrade setuptools
+RUN python3 -m pip install --no-cache-dir --upgrade pyarrow
 RUN python3 -m pip install --no-cache-dir --upgrade certifi
 RUN python3 -m pip install --no-cache-dir --upgrade pandas
 RUN python3 -m pip install --no-cache-dir --upgrade kaggle beautifulsoup4 greenlet imageio pydot plotly pydot-ng aiohttp[speedups]  mypy black[jupyter] bokeh openpyxl apsw lxml Pillow wheel psutil networkx seaborn sklearn-pandas scikit-learn scikit-image 
@@ -39,4 +39,6 @@ RUN python3 -m pip install --no-cache-dir --upgrade jsonschema
 RUN python3 -m pip install --no-cache-dir --upgrade idna
 RUN python3 -m pip install --no-cache-dir --upgrade google-auth-oauthlib 
 RUN python3 -m pip install --no-cache-dir --upgrade nbclient oauthlib
+RUN python3 -m pip install --no-cache-dir --upgrade traitlets
+RUN python3 -m pip install --no-cache-dir --upgrade matplotlib matplotlib-inline
 CMD ["bash", "-c", "source /etc/bash.bashrc && jupyter lab --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root"]
