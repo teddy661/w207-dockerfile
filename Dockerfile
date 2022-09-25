@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:2.10.0-gpu-jupyter
+FROM tensorflow/tensorflow:2.8.3-gpu-jupyter
 SHELL ["/bin/bash", "-c"]
 RUN apt update
 RUN apt install -y libncurses-dev
@@ -28,17 +28,17 @@ RUN python3 -m pip install --no-cache-dir --upgrade mlxtend
 RUN python3 -m pip install --no-cache-dir --upgrade statsmodels
 RUN python3 -m pip install --no-cache-dir --upgrade pydotplus
 RUN python3 -m pip install --no-cache-dir --upgrade graphviz
-RUN python3 -m pip install --no-cache-dir --upgrade tensorflow_decision_forests
+RUN python3 -m pip install --no-cache-dir tensorflow_decision_forests==0.2.7 
 RUN python3 -m pip install --no-cache-dir --upgrade jupyterlab ipykernel jedi requests requests-unixsocket chardet six urllib3
 RUN python3 -m pip install --no-cache-dir --upgrade torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
-RUN python3 -m pip install --no-cache-dir numba
+RUN python3 -m pip install --no-cache-dir --upgrade numba
 RUN python3 -m pip install --no-cache-dir --upgrade termcolor
-RUN python3 -m pip install --no-cache-dir --upgrade tensorflow-io-gcs-filesystem
 RUN python3 -m pip install --no-cache-dir --upgrade numpy
-RUN python3 -m pip install --no-cache-dir --upgrade jsonschema
+RUN python3 -m pip install --no-cache-dir --upgrade jsonschema fastjsonschema fonttools
 RUN python3 -m pip install --no-cache-dir --upgrade idna
 RUN python3 -m pip install --no-cache-dir --upgrade google-auth-oauthlib 
 RUN python3 -m pip install --no-cache-dir --upgrade nbclient oauthlib
 RUN python3 -m pip install --no-cache-dir --upgrade traitlets
-RUN python3 -m pip install --no-cache-dir --upgrade matplotlib matplotlib-inline
+RUN python3 -m pip install --no-cache-dir --upgrade executing
+RUN python3 -m pip install --no-cache-dir --upgrade matplotlib matplotlib-inline ipython
 CMD ["bash", "-c", "source /etc/bash.bashrc && jupyter lab --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root"]
