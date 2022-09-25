@@ -28,7 +28,7 @@ RUN python3 -m pip install --no-cache-dir --upgrade mlxtend
 RUN python3 -m pip install --no-cache-dir --upgrade statsmodels
 RUN python3 -m pip install --no-cache-dir --upgrade pydotplus
 RUN python3 -m pip install --no-cache-dir --upgrade graphviz
-RUN python3 -m pip install --no-cache-dir tensorflow_decision_forests==0.2.7 
+RUN python3 -m pip install --no-cache-dir tensorflow_decision_forests==0.2.4 
 RUN python3 -m pip install --no-cache-dir --upgrade jupyterlab ipykernel jedi requests requests-unixsocket chardet six urllib3
 RUN python3 -m pip install --no-cache-dir --upgrade torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
 RUN python3 -m pip install --no-cache-dir --upgrade numba
