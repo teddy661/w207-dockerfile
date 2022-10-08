@@ -67,8 +67,23 @@ RUN python3 -m pip install --no-cache-dir --upgrade numpy
 RUN python3 -m pip install --no-cache-dir --upgrade jsonschema
 RUN python3 -m pip install --no-cache-dir --upgrade idna
 RUN python3 -m pip install --no-cache-dir --upgrade google-auth-oauthlib 
-RUN python3 -m pip install --no-cache-dir --upgrade nbclient nbconvert oauthlib certifi pytz executing fastjsonschema fonttools stack-data terminado
+RUN python3 -m pip install --no-cache-dir --upgrade nbclient 
+RUN python3 -m pip install --no-cache-dir --upgrade nbconvert 
+RUN python3 -m pip install --no-cache-dir --upgrade oauthlib 
+RUN python3 -m pip install --no-cache-dir --upgrade certifi 
+RUN python3 -m pip install --no-cache-dir --upgrade pytz 
+RUN python3 -m pip install --no-cache-dir --upgrade executing 
+RUN python3 -m pip install --no-cache-dir --upgrade fastjsonschema 
+RUN python3 -m pip install --no-cache-dir --upgrade fonttools 
+RUN python3 -m pip install --no-cache-dir --upgrade stack-data 
+RUN python3 -m pip install --no-cache-dir --upgrade terminado
 RUN python3 -m pip install --no-cache-dir --upgrade traitlets
 RUN python3 -m pip install --no-cache-dir --upgrade matplotlib matplotlib-inline
-RUN python3 -m pip install --no-cache-dir --upgrade importlib-metadata importlib-metadata importlib-resources typing_extensions
+RUN python3 -m pip install --no-cache-dir --upgrade importlib-metadata 
+RUN python3 -m pip install --no-cache-dir --upgrade importlib-resources 
+RUN python3 -m pip install --no-cache-dir --upgrade typing_extensions 
+RUN python3 -m pip install --no-cache-dir --upgrade pyzmq 
+RUN python3 -m pip install --no-cache-dir --upgrade zipp
+RUN python3 -m pip install --no-cache-dir --upgrade executing
+RUN python3 -m pip install --no-cache-dir --upgrade nest-asyncio
 CMD ["bash", "-c", "source /etc/bash.bashrc && jupyter lab --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root"]
