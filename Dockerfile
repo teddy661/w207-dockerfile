@@ -52,7 +52,8 @@ RUN python3 -m pip install --no-cache-dir --upgrade graphviz
 RUN python3 -m pip install --no-cache-dir --upgrade tensorflow_decision_forests
 RUN python3 -m pip install --no-cache-dir --upgrade tensorboard
 RUN python3 -m pip install --no-cache-dir --upgrade jupyterlab 
-RUN python3 -m pip install --no-cache-dir --upgrade ipykernel 
+RUN python3 -m pip install --no-cache-dir --upgrade ipykernel
+RUN python3 -m pip install --no-cache-dir --upgrade ipython  
 RUN python3 -m pip install --no-cache-dir --upgrade jedi 
 RUN python3 -m pip install --no-cache-dir --upgrade requests 
 RUN python3 -m pip install --no-cache-dir --upgrade requests-unixsocket 
@@ -77,6 +78,7 @@ RUN python3 -m pip install --no-cache-dir --upgrade fastjsonschema
 RUN python3 -m pip install --no-cache-dir --upgrade fonttools 
 RUN python3 -m pip install --no-cache-dir --upgrade stack-data 
 RUN python3 -m pip install --no-cache-dir --upgrade terminado
+RUN python3 -m pip install --no-cache-dir --upgrade scipy
 RUN python3 -m pip install --no-cache-dir --upgrade traitlets
 RUN python3 -m pip install --no-cache-dir --upgrade matplotlib matplotlib-inline
 RUN python3 -m pip install --no-cache-dir --upgrade importlib-metadata 
@@ -86,4 +88,5 @@ RUN python3 -m pip install --no-cache-dir --upgrade pyzmq
 RUN python3 -m pip install --no-cache-dir --upgrade zipp
 RUN python3 -m pip install --no-cache-dir --upgrade executing
 RUN python3 -m pip install --no-cache-dir --upgrade nest-asyncio
+RUN python3 -m pip install --no-cache-dir --upgrade importlib-metadata importlib-metadata importlib-resources typing_extensions zipp 
 CMD ["bash", "-c", "source /etc/bash.bashrc && jupyter lab --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root"]
