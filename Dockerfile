@@ -80,7 +80,19 @@ RUN python3 -m pip install --no-cache-dir --upgrade terminado
 RUN python3 -m pip install --no-cache-dir --upgrade scipy
 RUN python3 -m pip install --no-cache-dir --upgrade traitlets
 RUN python3 -m pip install --no-cache-dir --upgrade matplotlib matplotlib-inline
-RUN python3 -m pip install --no-cache-dir --upgrade pyzmq
+RUN python3 -m pip install --no-cache-dir --upgrade importlib-metadata 
+RUN python3 -m pip install --no-cache-dir --upgrade importlib-resources 
+RUN python3 -m pip install --no-cache-dir --upgrade typing_extensions 
+RUN python3 -m pip install --no-cache-dir --upgrade pyzmq 
+RUN python3 -m pip install --no-cache-dir --upgrade zipp
+RUN python3 -m pip install --no-cache-dir --upgrade executing
 RUN python3 -m pip install --no-cache-dir --upgrade nest-asyncio
+RUN python3 -m pip install --no-cache-dir --upgrade tifffile[all]
+RUN python3 -m pip install --no-cache-dir --upgrade greenlet
+RUN python3 -m pip install --no-cache-dir --upgrade patsy
+RUN python3 -m pip install --no-cache-dir --upgrade jupyter_client
+RUN python3 -m pip install --no-cache-dir --upgrade jupyter-server
+RUN python3 -m pip install --no-cache-dir --upgrade nbformat
+RUN python3 -m pip install --no-cache-dir --upgrade opencv-contrib-python-headless
 RUN python3 -m pip install --no-cache-dir --upgrade importlib-metadata importlib-metadata importlib-resources typing_extensions zipp 
 CMD ["bash", "-c", "source /etc/bash.bashrc && jupyter lab --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root"]
