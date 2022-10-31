@@ -83,8 +83,8 @@ RUN python3 -m pip install --no-cache-dir --upgrade pyarrow \
     setuptools \
     jupyter-core \
     asttokens \
-    QtPy
-    
+    QtPy \
+    papermill  
 RUN pip uninstall -y PyGObject
 RUN python3 -m pip install --no-cache-dir  tensorflow_decision_forests==0.2.4 tensorboard==2.8.0
 COPY xgboost-1.6.2-cp38-cp38-linux_x86_64.whl /tf
