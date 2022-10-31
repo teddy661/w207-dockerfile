@@ -85,7 +85,8 @@ RUN python3 -m pip install --no-cache-dir --upgrade pyarrow \
     setuptools \
     jupyter-core \
     asttokens \
-    QtPy
+    QtPy \
+    papermill 
 RUN pip uninstall -y PyGObject
 COPY xgboost-1.6.2-cp38-cp38-linux_x86_64.whl /tf
 RUN python3 -m pip install /tf/xgboost-1.6.2-cp38-cp38-linux_x86_64.whl
