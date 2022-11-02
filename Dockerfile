@@ -86,10 +86,12 @@ RUN python3 -m pip install --no-cache-dir --upgrade pyarrow \
     jupyter-core \
     asttokens \
     QtPy \
-    papermill 
+    papermill \
+    tabulate
 RUN pip uninstall -y PyGObject
 COPY xgboost-1.6.2-cp38-cp38-linux_x86_64.whl /tf
 RUN python3 -m pip install /tf/xgboost-1.6.2-cp38-cp38-linux_x86_64.whl
 RUN /bin/rm /tf/xgboost-1.6.2-cp38-cp38-linux_x86_64.whl
 RUN python3 -m pip install --no-cache-dir --upgrade torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
+EXPOSE 6006
 CMD ["bash", "-c", "source /etc/bash.bashrc && jupyter lab --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root"]
