@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:2.10.0-gpu-jupyter
+FROM tensorflow/tensorflow:2.11.0-gpu-jupyter
 SHELL ["/bin/bash", "-c"]
 RUN apt update
 RUN apt install -y libncurses-dev \
@@ -86,8 +86,13 @@ RUN python3 -m pip install --no-cache-dir --upgrade pyarrow \
     jupyter-core \
     asttokens \
     QtPy \
-    papermill \
-    tabulate
+    papermill[all] \
+    tabulate \
+    keras-tuner \
+    blake3 \
+    colorama \
+    pipdeptree \
+    pytest   
 RUN pip uninstall -y PyGObject
 COPY xgboost-1.6.2-cp38-cp38-linux_x86_64.whl /tf
 RUN python3 -m pip install /tf/xgboost-1.6.2-cp38-cp38-linux_x86_64.whl
